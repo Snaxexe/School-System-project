@@ -2,10 +2,14 @@
 #include <string>
 void SchoolSystem::Run()
 {
+	//Prints out start menu
 	std::cout << "School System" << "\n" << "To add a student, Press: 1" << "\n" << "To delete a student, Press: 2" << "\n";
 
+	//int to take the input to know where to go from the start menu
 	int input;
 	std::cin >> input;
+
+	//if option one is chosen you get to add a new student into the "Students" vector
 	if (input == 1)
 	{
 		std::string name = "";
@@ -25,12 +29,14 @@ void SchoolSystem::Run()
 		}
 		 
 	}
+	//in progress
 	else if (input == 2)
 	{
 		std::cout << "Byebye";
 	}
 }
 
+//Add student function
 void SchoolSystem::AddStudent(std::string name, int age)
 {
 	Student student;
