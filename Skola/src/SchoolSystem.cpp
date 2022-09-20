@@ -1,4 +1,5 @@
 #include "SchoolSystem.h"
+#include "Student.h"
 #include <string>
 void SchoolSystem::Run()
 {
@@ -49,7 +50,20 @@ void SchoolSystem::Run()
 		else if (input == 3)
 		{
 			system("CLS");
-			std::cout << "I have no idea what to do now";
+
+			std::cout << "Sök på en elev" << "\n";
+			
+			std::vector<Student> students;
+			std::string input;
+			std::cin >> input;
+
+			for (auto i : students)
+			{
+				if (input==i.name)
+				{
+					std::cout << i.name;
+				}
+			}
 		}
 	}
 	}
