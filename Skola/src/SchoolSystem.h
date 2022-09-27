@@ -8,7 +8,7 @@ class SchoolSystem
 {
 public:
 	void Run();
-	void AddStudent(std::string name, int age);
+	void AddStudent(std::string name, int age, std::string klass);
 	void RemoveStudent();
 
 	std::vector<Student> students;
