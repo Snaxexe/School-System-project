@@ -37,13 +37,14 @@ void SchoolSystem::Run()
 				std::cout << i.age << "\n";
 				std::cout << i.klass << "\n\n";
 			}
-			
 		}
+
 		//in progress
 		else if (input == 2)
 		{
-			std::cout << "Byebye";
+			RemoveStudent();
 		}
+
 		//Searches and prints a students information
 		else if (input == 3)
 		{
@@ -60,6 +61,7 @@ void SchoolSystem::Run()
 				}
 			}
 		}
+
 		//Change a students class
 		else if (input == 4)
 		{
@@ -73,19 +75,16 @@ void SchoolSystem::Run()
 			std::string newerklass;
 			std::cin >> newerklass;
 
-			for (auto i : students)
+			for (auto&i : students)
 			{
 				if (input == i.name)
 				{
 					i.klass = newerklass;
 				}
 			}
-
 		}
 	}
-	}
-	
-
+}
 //Add student function
 void SchoolSystem::AddStudent(std::string name, int age, std::string klass)
 {
@@ -99,4 +98,17 @@ void SchoolSystem::AddStudent(std::string name, int age, std::string klass)
 
 void SchoolSystem::RemoveStudent()
 {
+	std::cout << "Type the name of a student to remove:" << "\n";
+
+	std::string input;
+	std::cin >> input;
+
+	for (auto&i : students)
+	{
+		if (input == i.name)
+		{
+			i.name = "removed";
+			std::cout << "\n" << i.name;
+		}
+	}
 }
